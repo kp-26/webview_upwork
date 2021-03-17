@@ -10,7 +10,6 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
-
   @override
   void initState() {
     super.initState();
@@ -23,13 +22,19 @@ class _SplashscreenState extends State<Splashscreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+        (route) => false);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Image.asset("assets/" + "splash_screen_suibox" + ".png", height: MediaQuery.of(context).size.height, width: MediaQuery.of(context).size.width, fit: BoxFit.fill,)
-    );
+        body: Image.asset(
+      "assets/" + "splash_screen_suibox" + ".png",
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      fit: BoxFit.cover,
+    ));
   }
 }
